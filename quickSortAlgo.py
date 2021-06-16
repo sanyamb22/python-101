@@ -1,7 +1,7 @@
 # QUICK SORT ALGORITHM
 
 def partition(arr,low,high): 
-	i = ( low-1 )		 # index of smaller element 
+	i = ( low - 1)		 # index of smaller element 
 	pivot = arr[high]	 # pivot 
 
 	for j in range(low , high): 
@@ -11,11 +11,11 @@ def partition(arr,low,high):
 		if arr[j] <= pivot: 
 		
 			# increment index of smaller element 
-			i = i+1
+			i = i + 1
 			arr[i],arr[j] = arr[j],arr[i] 
 
 	arr[i+1],arr[high] = arr[high],arr[i+1] 
-	return ( i+1 )
+	return ( i + 1 )
 
 def quickSort(arr,low,high): 
 	if low < high: 
@@ -36,3 +36,28 @@ n = len(arr)
 quickSort(arr,0,n-1) 
 print ("Sorted array is:") 
 print(arr)
+
+
+# def partition(arr, low, high):
+# 	start = low - 1
+# 	pivot = high
+
+# 	for i in range(low, high):
+# 		if arr[i] <= pivot:
+# 			start += 1
+# 			arr[start], arr[i] = arr[i], arr[start]
+# 	arr[start], arr[high] = arr[high], arr[start]
+# 	return start+1
+
+# def quickSort(arr, low, high):
+# 	if low < high:
+# 		pivot_index = partition(arr, low, high)
+# 		quickSort(arr, low, pivot_index-1)
+# 		quickSort(arr, pivot_index+1, high)
+
+# # DRIVER CODE
+# arr = [11, 9, 29, 7, 2, 15, 28]
+# print(arr)
+# n = len(arr)
+# quickSort(arr, 0, n-1)
+# print(arr)
